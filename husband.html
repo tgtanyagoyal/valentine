@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      text-align: center;
+      max-width: 500px;
+    }
+
+    h1 {
+      color: #e63946;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 999px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .yes {
+      background-color: #e63946;
+      color: white;
+    }
+
+    .no {
+      background-color: #ccc;
+      color: #333;
+      position: relative;
+    }
+
+    .message {
+      margin-top: 25px;
+      font-size: 20px;
+      color: #e63946;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>❤️ Will You Be My Valentine? ❤️</h1>
+    <p>Every day with you is special… but I want to make this Valentine's extra special. 💕</p>
+
+    <div class="buttons">
+      <button class="yes" onclick="showMessage()">Yes 💖</button>
+      <button class="no" onmouseover="moveButton()">No 😅</button>
+    </div>
+
+    <div class="message" id="message">
+      Yay! I love you ❤️ Can't wait for our Valentine’s date!
+    </div>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('message').style.display = 'block';
+    }
+
+    function moveButton() {
+      const button = document.querySelector('.no');
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      button.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
+</body>
+</html>
